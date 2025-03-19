@@ -96,6 +96,7 @@ body {
     background-color: var(--color-tertiary);
     border-color: #000;
     color: var(--color-text);
+    padding: 24px;
 }
 
 /* Estilos de entrada de texto */

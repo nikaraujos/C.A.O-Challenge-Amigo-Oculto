@@ -1,59 +1,59 @@
 //O principal objetivo deste desafio é fortalecer suas habilidades em lógica de programação. Aqui você deverá desenvolver a lógica para resolver o problema.
+let listaDeAmigos = [];
 
-let Amigos = [];
+function adicionarAmigo () {
+    let inputAmigo= document.getElementById ("amigo");
+    let nomeDoAmigo=inputAmigo.value;
+   
 
-function adicionarAmigo() {
-    let input = document.getElementById("amigo");
-    let amigoIncluido = input.value;
-
-
-    if(!amigoIncluido){
-        alert('digite um nome válido');
+    if(!nomeDoAmigo){
+        alert ('digite um nome válido');
         return;
-}
-
-    listaAmigos.push(amigoIncluido);
-    input.value = "";
-    input.focus();
-    console.log(listaAmigosmigos)
+    }  
+        // o metodo push adicona um novo elemento ao array 
+    listaDeAmigos.push(nomeDoAmigo);
+    inputAmigo.value= "";
+    inputAmigo.focus();
+    console.log (listaDeAmigos) 
     atualizarLista();
 
 }
 
-function atualizarLista(){
-    let listaAmigos = document.getElementById("listaAmigos");
-    listaAmigos.innerHTML = "";
+function atualizarLista() {
+    let listaAmigos=document.getElementById("listaAmigos");
+    listaAmigos.innerHTML= "";
 
-    for(let i = 0; i < listaAmigos.clientHeight; i++) {
-        let item = document.createElement ("li");
-        item.textContent = listaAmigos[i];
+    for (let i = 0; i< listaDeAmigos.length; i++) {
+        let item=document.createElement ("li");
+        item.textContent= listaDeAmigos[i];
         listaAmigos.appendChild(item);
-    }
+
+    } 
 }
 
 function sortearAmigo() {
-    if (listaAmigos.length===0){
-        alert('Nenhum amigo foi adicionado');
+    if (listaDeAmigos.length===0){
+        alert('Nenhum amigo foi adicionado :(');
         return;
     }
-
-    let amigoSorteado = Amigos[Math.floor(Math.random() * Amigos.length)];
+    let amigosorteado= listaDeAmigos[Math.floor(Math.random() * listaDeAmigos.length)];
     let resultado = document.getElementById ("resultado");
-    resultado.innerHTML = `o amigo sorteado foi : ${amigoSorteado}`;
+    resultado.innerHTML=`o amigo sorteado foi : ${amigosorteado}`;
 
-    let limparLista = document.getElementById("listaAmigos");
-    listaAmigos.innerHTML = "";
-    listaAmigos = [];
+    let limparlista= document.getElementById("listaAmigos");
+    limparlista.innerHTML="";
+    listaDeAmigos=[];
 }
-
-function reiniciar() {
-    Amigos = [];
+function novojogo() {
+   
+    listaDeAmigos = [];
 
     let listaAmigos = document.getElementById("listaAmigos");
-    listaAmigos.innerHTML = "";
+    listaAmigos.innerHTML = ""; 
+
 
     let resultado = document.getElementById("resultado");
     resultado.innerHTML = "";
-    
-    alert("Jogo reiniciado!")
+
+    alert("Jogo reiniciado!");
 }
